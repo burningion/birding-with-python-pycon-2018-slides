@@ -6,9 +6,9 @@ It will also contain links to the talk's video, along with any supplemental code
 
 ## Supplemental Code
 
-There are supplemental Jupyter notebooks to allow you to play with the code.
+There are supplemental [Jupyter notebooks](https://github.com/burningion/birding-with-python-pycon-2018-slides/blob/master/notebooks/convolutions.ipynb) to allow you to play with the code.
 
-You can view them in the notebooks folder of this repo.
+You can view them in the [notebooks folder](https://github.com/burningion/birding-with-python-pycon-2018-slides/tree/master/notebooks) of this repo.
 
 ## Credits 
 
