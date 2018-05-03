@@ -12,4 +12,7 @@ You can view them in the notebooks folder of this repo.
 
 ## Credits 
 
+Pigeon with Camera from the [City archive Kronberg (Tanus)](http://sdtb.de/museum-of-technology/exhibitions/the-pigeon-photographer/).
+
 Why Birds Pigeon racing photo from flickr user [ribarnica](https://www.flickr.com/photos/ribarnica/9175201834/).
+
