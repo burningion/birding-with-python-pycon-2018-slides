@@ -18,3 +18,4 @@ Pigeon with Camera from the [City archive Kronberg (Tanus)](http://sdtb.de/museu
 
 Why Birds Pigeon racing photo from flickr user [ribarnica](https://www.flickr.com/photos/ribarnica/9175201834/).
 
+ImageNet diagram / filters from [ImageNet Classification with Deep Convolutional Neural Networks from 2012](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks))
