@@ -12,6 +12,8 @@ You can view them in the [notebooks folder](https://github.com/burningion/birdin
 
 ## Credits 
 
+Carrion Crow from flickr user [thekrankis](https://www.flickr.com/photos/thekrankis/12386561983/) via Wikipedia article for Carrion Crows.
+
 Now that's what I Call Une Pipe from [Know Your Meme](http://knowyourmeme.com/photos/1250385-this-is-not-a-pipe-parodies).
 
 Pigeon with Camera from the [City archive Kronberg (Tanus)](http://sdtb.de/museum-of-technology/exhibitions/the-pigeon-photographer/).
