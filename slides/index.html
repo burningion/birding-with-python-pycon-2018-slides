@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+	<html class="sl-root decks export offline loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Birding with Python and Machine Learning</title>
+
+		<meta name="description" content="Slides from my 2018 Pycon talk, Birding with Python and Machine Learning">
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+
+
+	</head>
+	<body class="reveal-viewport theme-font-overpass2 theme-color-black-blue">
+		<div class="reveal">
+			<div class="slides">
+				<section data-id="146e67227751222db0a97e85f4ac188b" data-background-color="#000000"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 306px; height: auto;" data-block-id="61d7c1817b74c8bacfb93e5c9033824b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" data-has-line-height="" style="line-height: 0.91; z-index: 11;">
+<h1 style="text-align:left"><span style="font-size:0.9em">Birding with Python and<br>
+Machine Learning</span></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="4796405250e405e8346b601aa1c848ff" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 525px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(0, 0, 0);">
+<h2 style="text-align:left">
+<span style="color:#FFF0F5">Kirk Kaiser</span><br>
+<span style="color:#FFA500">@burningion</span><br>
+ </h2>
+</div></div></section><section data-id="74acbf72e63806e6579ba0cb8fbb0d9d">
+<div class="sl-block" data-block-type="text" data-block-id="46e22ef69ebb4bda62a80f38b1fa7e0f" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 181px; top: 522px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p>Author, <strong><span style="color:#FFA500">Make Art with Python</span></strong></p>
+
+<p><strong>@<span style="color:#FFA500">burningion</span></strong><span style="color:#FFA500"> </span>on Twitter, Github</p>
+
+<p><span style="color:rgb(255, 255, 255)">APM </span>Evangelist @ <span style="color:#FFA500">Datadog</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="d65e521da8a8437d2bb14cef9d9974d2" style="min-width: 4px; min-height: 4px; width: 341px; height: 476px; left: 310px; top: 53px;"><div class="sl-block-style" style="z-index: 12; transform: rotate(360deg);"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="400" data-natural-height="558" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/1eebbd906a6e315ba6215b790a8771f6.png"></div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 652px;" data-block-id="a38925afa95a7a3d5ae9638ec0b15e30"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="0">
+<p>(Hiring!)</p>
+</div></div></section><section data-id="cd733300b0e5cbaea530037ebeb202a8"><div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 1257px; height: 707px; left: -209px; top: -7px;" data-block-id="f761dbbce057d812e65eee218b556ee9"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1280" data-natural-height="720" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/e3e9402489d0649eda88affb05e1599a.png"></div></div></section><section class="stack" data-id="14455471cee140ea49cce966b3dd29a6"><section data-id="17e724f062e9ef6349256e417cf0a052"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 577px; height: auto;" data-block-id="7b4275c8f328e18938b271139326420d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2><span style="font-size:1.4em">"Machine Learning"</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 500px; height: 436px; left: 230px; top: 90px; min-width: 4px; min-height: 4px;" data-block-id="53240b45e6f6574c73796a99b21face0"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="500" data-natural-height="436" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/c4d5f627242f66d9ddc41074e1d9efe8.jpg"></div></div></section><section data-id="e963cfd7cc56bb905bf02967fd658eba" data-background-color="#e69138"><div class="sl-block" data-block-type="text" data-block-id="4efe9b94de4c0b46999f134ef714b11e" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 280px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h1>NEural Networks are software 2.0</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="bcbdb5e6e6713de878b8672a08e45f02" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 432px; top: 344px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-fragment-index="0">
+<p>*</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="8566f1b7cad610640f12b4d06dc3db5a" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 280px; top: 560px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="0">
+<p style="text-align:right">*Director of AI at Tesla,</p>
+
+<p style="text-align:right">Andrej Karpathy<br>
+<span style="font-size:0.5em">(https://medium.com/@karpathy/software-2-0-a64152b37c35)</span></p>
+</div></div></section><section data-id="7dc74fca2459a77817278ff3f0d9546a"><div class="sl-block" data-block-type="text" data-block-id="e3e2d283b02970b0ad79bb4b6e5325bb" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 238px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p><span style="text-align:start">"People are now building a <span style="color:#FF8C00">new kind of software</span> by assembling networks of parameterized<span style="color:#FFA500"> functional blocks</span> and by <span style="color:#FFA500">training them from examples</span> using some form of <span style="color:#FFA500">gradient-based optimization</span>."</span></p>
+
+<p style="text-align:right">- Yann LeCun<br>
+Director of AI Research<br>
+Facebook</p>
+</div></div></section><section data-id="d0e6466afc1914ce7614fdebe2506965"><div class="sl-block" data-block-type="text" style="width: 413px; left: 274px; top: 57px; height: auto;" data-block-id="ebcc73a51c12b8a6b6fae4d4a217dfe1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2 style="text-align:center">Lenet-5<br>
+(1998)</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="2eb2ad40823ca4f0dcd3680a0e940ff0" style="min-width: 4px; min-height: 4px; width: 806px; height: 280px; left: 77px; top: 153px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1165" data-natural-height="404" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/43018a85235dfba4836506f63ce01f37.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="4d805985977e674811fd58a25b69ee4f" style="min-width: 4px; min-height: 4px; width: 263px; height: 238px; left: 400px; top: 440px;"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="0"><img data-natural-width="546" data-natural-height="495" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/0a39e4aa5ca03835ace27a7aeea00ce7.png"></div></div>
+<div class="sl-block" data-block-type="shape" data-block-id="ee9be0805235e984586d974f2c53cca9" style="min-width: 4px; min-height: 4px; width: 802px; height: 80px; left: 80px; top: 450px;"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 153, 0)" data-shape-stretch="true" style="z-index: 13;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 802 80"><polygon points="0,24 401,24 401,0 802,40 401,80 401,56 0,56" class="shape-element" fill="rgb(255, 153, 0)"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 802px; height: 73px; left: 80px; top: 576px;" data-block-id="b161cc33ec9a006389f847809dbcaa8c"><div class="sl-block-style" style="z-index: 15; transform: rotate(180deg);"><div class="sl-block-content fragment" data-shape-type="arrow-right" data-shape-fill-color="rgb(255, 153, 0)" data-shape-stretch="true" style="z-index: 15;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 802 73"><polygon points="0,21.9 401,21.9 401,0 802,36.5 401,73 401,51.099999999999994 0,51.099999999999994" class="shape-element" fill="rgb(255, 153, 0)"></polygon></svg></div></div></div></section></section><section class="stack" data-id="689a42b0eab0e6934311ab6876944d55"><section data-id="9468ec3c970c89dc4065bf28560c5af0"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="4b90efb16b77f395879ed5cbc58e6c8e"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; color: rgb(255, 255, 255);">
+<h1>MODERN<em> </em>MACHINE LEARNING IS <span style="color:#FFA500">BIG DATA</span> AND <span style="color:#FFA500">BIG COMPUTATION</span>
+</h1>
+</div></div></section><section data-id="a2cb16a0eceb25207c76888b8832a215"><div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 1221px; height: 700px; left: -144px; top: 1px;" data-block-id="db8e9a3cda31dfa4ecee28c6f2ae78e0"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="2142" data-natural-height="1228" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/d2ac4698a3fcfcddb42d3c9f5b42423e.png"></div></div></section><section data-id="b10fc15a410732d1b51175ff734b4556"><div class="sl-block" data-block-type="text" style="width: 864px; left: 30px; top: 58px; height: auto;" data-block-id="b2c7a3a510f80a569c75b699a16c6490"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text" dir="ui">
+<h1>NOT FOR SALE</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 864px; left: 30px; top: 217px; height: auto;" data-block-id="984c4011d81990c36e3c9da58b2cab38"><div class="sl-block-content fragment" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 11;" data-placeholder-text="Text" dir="ui" data-fragment-index="0">
+<h1><span style="color:#FFA500">$56k / year</span></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 864px; left: 30px; top: 381px; height: auto;" data-block-id="d1353555169a0f4277c21ccc8a3bdb2c"><div class="sl-block-content fragment" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 13;" data-placeholder-text="Text" dir="ui" data-fragment-index="1">
+<h1>DATA MUST BE IN THEIR CLOUD</h1>
+</div></div></section><section data-id="5792aa3b5795f78ad916ec195066dc06"><div class="sl-block" data-block-type="image" style="width: 545px; height: 513px; left: 208px; top: 47px; min-width: 4px; min-height: 4px;" data-block-id="bc43dd607e9ca0639c2b42b4376bdc1f"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1433" data-natural-height="1350" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/cad855d290ba7a3a44264a2094ae76b2.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 588px;" data-block-id="05230755081cbb5d7edf6376e0a6d86e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<h2>32gig Graphics Card for<br>
+<span style="color:#FFA500">Deep Learning WorkstationS</span>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 300px; height: 300px; left: 516px; top: 103px;" data-block-id="98970a089f5351566f97ae5e80f186c9"><div class="sl-block-content fragment" data-shape-type="arrow-up" data-shape-fill-color="rgb(230, 145, 56)" data-shape-stretch="true" style="z-index: 13;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 300 300"><polygon points="150,0 300,150 210,150 210,300 90,300 90,150 0,150 150,0" class="shape-element" fill="rgb(230, 145, 56)"></polygon></svg></div></div></section><section data-id="673ef53e7d2aafda99d6e20d13e522e1"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 140px; height: auto;" data-block-id="6d61024851df9d7ce034c7d891a4e3cf"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>NOT JUST COMPUTATION,</h1>
+
+<h1><span style="color:#FFA500">DATA IS BIG TOO</span></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="39681eabfa27f0c5a285fd7f3d9a9090" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 350px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p><span style="font-size:1.2em">ImageNet has over <span style="color:#FFA500">14 million image</span> URLs with <span style="color:#FFA500">20,000 categories</span></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 490px;" data-block-id="f245b34614502291fd4b20b94f597143"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p><span style="font-size:1.2em">COCO is <span style="color:#FFA500">2.5 million</span> labeled images</span></p>
+</div></div></section><section data-id="01138dc84ad18dd8a27f9cc71114a254" data-background-color="#e69138"><div class="sl-block" data-block-type="text" style="width: 864px; left: 48px; top: 223px; height: auto;" data-block-id="e9e5637fcfff0f4b6445d06ba03a92f3"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text">
+<h1 style="text-align: center;"><span style="font-size:1.8em">UHH...</span></h1>
+</div></div></section><section data-id="14400fc360337196d4651810c365a089"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="a382eb6ab56a8a0754fed29a9dff627c"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>
+<span style="color:#FFA500">HACKERS</span> AND <span style="color:#FFA500">HOBBYISTS</span> NEED NOT APPLY TO MACHINE LEARNING?</h1>
+</div></div></section><section data-id="3dec9f80623a5b53d10ce3ded700d567" data-background-color="#4a86e8"><div class="sl-block" data-block-type="text" style="width: 864px; left: 48px; top: 235px; height: auto;" data-block-id="7c08cbcdeb18064b06fed9cd947cacac"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text">
+<h1 style="text-align: center;">TRANSFER<br>
+LEARNING</h1>
+</div></div></section><section data-id="e1e173e2d731e475c3e66b8472b07e36"><div class="sl-block" data-block-type="text" style="width: 807px; left: 77px; top: 510px; height: auto;" data-block-id="d2338c5fb7453c6484627b26fdc86462">
+    <div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;" data-fragment-index="1">
+        <h2>Cut OFF THE END
+            <br>
+OF THE GROWN UP'S WORK
+        </h2>
+        <h2>AND MAKE IT YOUR OWN</h2>
+    </div>
+</div>
+<div class="sl-block" data-block-type="image" style="width: 960px; height: 213px; left: 1px; top: 244px; min-width: 4px; min-height: 4px;" data-block-id="540615d2647849fe710811efaee27220">
+    <div class="sl-block-content" style="z-index: 12;">
+        <img data-natural-width="1283" data-natural-height="284" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/5aabcf3625e5318aa7c5944d31b52077.JPG">
+    </div>
+</div>
+<div class="sl-block" data-block-type="text" data-block-id="8e2c0cc3c93c7695904a788d5af131f7" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 171px; top: 101px;">
+    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+        <h1>GoogLeNet
+            <br>
+(2014)
+        </h1>
+    </div>
+</div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 960px; top: 228px;" data-block-id="a470e64aa74f8030b05a05e8ad532742">
+    <div class="sl-block-content fragment" data-line-x1="497" data-line-y1="212" data-line-x2="512" data-line-y2="-33" data-line-color="#e69138" data-line-start-type="none" data-line-end-type="none" style="z-index: 14;" data-line-width="35px" data-fragment-index="0">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="15" height="245" viewbox="497 -33 15 245"><line stroke="#e69138" stroke-width="35" x1="497.5" y1="212.5" x2="512.5" y2="-32.5"></line></svg>
+    </div>
+</div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 930px; top: 228px;" data-block-id="00c905a99350059a420bbfc100e4d01b">
+    <div class="sl-block-content fragment" data-line-x1="497" data-line-y1="212" data-line-x2="512" data-line-y2="-33" data-line-color="#e69138" data-line-start-type="none" data-line-end-type="none" style="z-index: 15;" data-line-width="35px" data-fragment-index="0">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="15" height="245" viewbox="497 -33 15 245"><line stroke="#e69138" stroke-width="35" x1="497.5" y1="212.5" x2="512.5" y2="-32.5"></line></svg>
+    </div>
+</div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 907px; top: 228px;" data-block-id="eb09a562f7363b5f8c9f0a2f0cf26331">
+    <div class="sl-block-content fragment" data-line-x1="497" data-line-y1="212" data-line-x2="512" data-line-y2="-33" data-line-color="#e69138" data-line-start-type="none" data-line-end-type="none" style="z-index: 16;" data-line-width="35px" data-fragment-index="0">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="15" height="245" viewbox="497 -33 15 245"><line stroke="#e69138" stroke-width="35" x1="497.5" y1="212.5" x2="512.5" y2="-32.5"></line></svg>
+    </div>
+</div>
+<div class="sl-block" data-block-type="text" data-block-id="de4854c520d2903737358aa49ecd5d6d" style="height: auto; min-width: 30px; min-height: 30px; width: 373px; left: 294px; top: 83px;">
+    <div class="sl-block-style" style="z-index: 17; transform: rotate(360deg);">
+        <div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(230, 145, 56); background-color: rgb(204, 204, 204);" data-fragment-index="0">
+            <h1>
+                <span style="color:#FFA500">KIRKNET
+                    <br>
+(2018)
+                </span>
+            </h1>
+        </div>
+    </div>
+</div></section><section data-id="b5ac74180b80a5ee4ce3006c71509135"><div class="sl-block" data-block-type="text" style="width: 864px; left: 48px; top: 183px; height: auto;" data-block-id="6eaa8b2f73b97a30fe1b6c57f2536f9b"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text">
+<h1 style="text-align:center"><span style="font-size:1.4em">O.P.G.</span></h1>
+
+<h2 style="text-align:center"><span style="font-size:0.9em"><span style="color:rgb(255, 165, 0)">(Other People's GPUs)</span></span></h2>
+</div></div></section></section><section class="stack" data-id="7bcb925810f3cd70c97a3b3773bdd9b5"><section data-id="82b116b955eab6a707cf2a581be36be2" data-background-color="#222222"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 42px; height: auto;" data-block-id="3a778d314659422f1382475fdc55a8c1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>ConVnets</h2>
+
+<p>(Uses Convolutions to Extract Features)</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 710px; height: 296px; left: 125px; top: 382px; min-width: 4px; min-height: 4px;" data-block-id="b259f75ab83326c6c13023dac81fda31"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="997" data-natural-height="415" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/83e6a5111f3cdc203c2cc03fea96f29f.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="8d486e1b1edd582fc3bf299f6bdb5348" style="min-width: 4px; min-height: 4px; width: 806px; height: 261px; left: 74px; top: 145px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1044" data-natural-height="338" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/3074d37f6565c8ec3508ba20e474d8d9.png"></div></div>
+<div class="sl-block" data-block-type="line" data-block-id="c5106ab051cd8110c8e768e71a20fd10" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 131px; top: 393px;"><div class="sl-block-content" data-line-x1="-249" data-line-y1="428" data-line-x2="-249" data-line-y2="143" data-line-color="#222222" data-line-start-type="none" data-line-end-type="none" style="z-index: 13;" data-line-width="23px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="1" height="285" viewbox="-249 143 1 285"><line stroke="#222222" stroke-width="23" x1="-248.5" y1="428.5" x2="-248.5" y2="143.5"></line></svg></div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 825px; top: 393px;" data-block-id="61552cdf1b74970542751b963d201883"><div class="sl-block-content" data-line-x1="-249" data-line-y1="428" data-line-x2="-249" data-line-y2="143" data-line-color="#222222" data-line-start-type="none" data-line-end-type="none" style="z-index: 15;" data-line-width="23px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="1" height="285" viewbox="-249 143 1 285"><line stroke="#222222" stroke-width="23" x1="-248.5" y1="428.5" x2="-248.5" y2="143.5"></line></svg></div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 117px; top: 681px;" data-block-id="48eccc6772f3cf5d787df27a4869e700"><div class="sl-block-content" data-line-x1="-255" data-line-y1="401" data-line-x2="-981" data-line-y2="401" data-line-color="#222222" data-line-start-type="none" data-line-end-type="none" style="z-index: 16;" data-line-width="37px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="726" height="1" viewbox="-981 401 726 1"><line stroke="#222222" stroke-width="37" x1="-254.5" y1="401.5" x2="-980.5" y2="401.5"></line></svg></div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 63px; top: 400px;" data-block-id="2c90a93959e3ce0878309bbd80d81d9c"><div class="sl-block-content" data-line-x1="485" data-line-y1="135" data-line-x2="-332" data-line-y2="135" data-line-color="#222222" data-line-start-type="none" data-line-end-type="none" style="z-index: 17;" data-line-width="23px"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="817" height="1" viewbox="-332 135 817 1"><line stroke="#222222" stroke-width="23" x1="485.5" y1="135.5" x2="-331.5" y2="135.5"></line></svg></div></div></section><section data-id="09682bc5bc082f3e72f4d493115e7759" data-background-color="#ff9900"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 227px; height: auto;" data-block-id="bb10bdee0cafd4f912d5740272c5435d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>What's a convolution?</h1>
+</div></div>
+<div class="sl-block" data-block-type="table" data-block-id="04674eb4dc2a0375cad8cadfbbd2fda5" style="height: auto; min-width: 120px; min-height: 30px; width: 304px; left: 328px; top: 319px;"><div class="sl-block-style" style="z-index: 12; transform: rotate(360deg);"><div class="sl-block-content fragment" style="z-index: 12;" data-table-border-width="20px" data-table-padding="18px" data-fragment-index="0"><table><tbody>
+<tr>
+<th style="border-width: 20px; padding: 18px;">-1</th>
+<th style="border-width: 20px; padding: 18px;">0</th>
+<th style="border-width: 20px; padding: 18px;">1</th>
+</tr>
+<tr>
+<td style="border-width: 20px; padding: 18px;"><strong>-1</strong></td>
+<td style="border-width: 20px; padding: 18px;"><strong>0</strong></td>
+<td style="border-width: 20px; padding: 18px;"><strong>1</strong></td>
+</tr>
+<tr>
+<td style="border-width: 20px; padding: 18px;"><strong>-1</strong></td>
+<td style="border-width: 20px; padding: 18px;"><strong>0</strong></td>
+<td style="border-width: 20px; padding: 18px;"><strong>1</strong></td>
+</tr>
+</tbody></table></div></div></div></section><section data-id="db3703dce1dcdb876311582320637cd8"><div class="sl-block" data-block-type="text" style="width: 807px; left: 76px; top: 266px; height: auto;" data-block-id="9e9d059f9b4a363dbce2887d44fb1d4f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>
+<span style="color:#FF8C00">CONVOLUTIONS</span> ARE ABOUT THE <span style="color:#FFA500">RELATIONSHIPS</span> BETWEEN A <span style="color:#FFA500">PIXEL </span>AND ITS<span style="color:#FFA500"> NEIGHBORS</span>
+</h1>
+</div></div></section><section data-id="ea03250a07d67588e77c0dbd34242df9"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="a6118bde6863fdc969df54d0b3b47f1a"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>
+<span style="color:#FFA500"><strong>MultiPly</strong></span> and <span style="color:#FFA500">add</span> a pixel and <span style="color:#FFA500">its neighbors</span> by a set of <span style="color:#FFA500">weights</span>
+</h1>
+</div></div></section><section data-id="a95142287be183b87f25ea8c999553ee"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="52dabdd01fbddfbc98f22efdc6db9bd0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h2>applying A convolution</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 261px; height: 252px; left: 590px; top: 73px; min-width: 4px; min-height: 4px;" data-block-id="56300411a105ae9b2d554e15ddcfc8e5"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="261" data-natural-height="252" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/82364d03be9a38f64fc7bcafffd289cb.png"></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="cfd5963a5f4f8748cf2bbe3b407a4a96" style="min-width: 30px; min-height: 30px; width: 495px; height: 499px; left: 29px; top: 166px;"><div class="sl-block-style" style="z-index: 13;"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 103%;"><pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+im = plt.imread('../images/grid.jpg') # grayscale!
+plt.imshow(im,cmap='gray')
+
+from scipy.signal import convolve2d
+
+# vertical edge detector
+vert_kernel = np.array([[1, 0, -1], 
+                        [1, 0, -1],
+                        [1, 0, -1]])
+
+vertical = convolve2d(im, vert_kernel, 'same')
+plt.imshow(vertical,cmap='gray')</code></pre></div></div></div>
+<div class="sl-block" data-block-type="line" data-block-id="639390dfdc1c0b73a8323b4b6ef7249a" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 721px; top: 308px;"><div class="sl-block-content" data-line-x1="181" data-line-y1="16" data-line-x2="181" data-line-y2="145" data-line-color="#00ff00" data-line-start-type="none" data-line-end-type="line-arrow" style="z-index: 14;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="1" height="129" viewbox="181 16 1 129"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="181" y1="16" x2="181" y2="143"></line><line stroke="#00ff00" stroke-width="2" x1="181" y1="16" x2="181" y2="143"></line><path style="fill: rgba(0,0,0,0);" stroke="#00ff00" stroke-width="2" transform="translate(181,143) rotate(180)" d="M 6 6 L 0 0 L -6 6"></path></svg></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="5830bf65e733f6120986b8842cd3c83a" style="min-width: 4px; min-height: 4px; width: 261px; height: 252px; left: 590px; top: 437px;"><div class="sl-block-content" style="z-index: 15;"><img data-natural-width="261" data-natural-height="252" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/e2a1462b20bce1189336db8c8fbf6a58.png"></div></div></section><section data-id="8b24bd639af2dac01b4780d6b8c71723"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="f948f3e45a317a70553a081bb20e07e3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2>convolutionS WORK WITH ROTATIONS</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 261px; height: 252px; left: 590px; top: 73px; min-width: 4px; min-height: 4px;" data-block-id="3543c604a42fd7ac8aa11b93cfb0b05a"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="261" data-natural-height="252" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/82364d03be9a38f64fc7bcafffd289cb.png"></div></div>
+<div class="sl-block" data-block-type="code" style="width: 495px; height: 499px; left: 29px; top: 167px;" data-block-id="841eb6f6d788e3d8edc2e4217fb45462"><div class="sl-block-style" style="z-index: 12;"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 106%;"><pre><code># horizontal edge detector
+# by rotating our vertical filter 90 degrees
+# [-1 -1 -1]
+# [0  0  0]
+# [1  1  1]
+
+horiz_kernel = np.rot90(vert_kernel)
+horizontal = convolve2d(im, horiz_kernel, 'same')
+
+plt.imshow(horizontal,cmap='gray')</code></pre></div></div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; left: 721px; top: 308px;" data-block-id="ad0f7c8aba98b4515f7a95041e9229ae"><div class="sl-block-content" data-line-x1="181" data-line-y1="16" data-line-x2="181" data-line-y2="145" data-line-color="#00ff00" data-line-start-type="none" data-line-end-type="line-arrow" style="z-index: 13;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="1" height="129" viewbox="181 16 1 129"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="181" y1="16" x2="181" y2="143"></line><line stroke="#00ff00" stroke-width="2" x1="181" y1="16" x2="181" y2="143"></line><path style="fill: rgba(0,0,0,0);" stroke="#00ff00" stroke-width="2" transform="translate(181,143) rotate(180)" d="M 6 6 L 0 0 L -6 6"></path></svg></div></div>
+<div class="sl-block" data-block-type="image" style="width: 261px; height: 252px; left: 590px; top: 437px; min-width: 4px; min-height: 4px;" data-block-id="135e2678a1e61c700287d11a9134a7e9"><div class="sl-block-content" style="z-index: 14;"><img data-natural-width="261" data-natural-height="252" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/fcc141a604335aaa816ec471f5ac795c.png"></div></div></section><section data-id="c948a6a5cc69bacfa2695e3a926f45f3"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="b8e33e523e078cb4784300dcb107dc64"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2>convolutionS CAN DETECT EDGES</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 261px; height: 252px; left: 590px; top: 73px; min-width: 4px; min-height: 4px;" data-block-id="cb54db51f49163686afb354ce4315c16"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="261" data-natural-height="252" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/82364d03be9a38f64fc7bcafffd289cb.png"></div></div>
+<div class="sl-block" data-block-type="code" style="width: 495px; height: 499px; left: 29px; top: 171px;" data-block-id="c34bdde1dafd92234c8cfc7b318df603"><div class="sl-block-style" style="z-index: 12;"><div class="sl-block-content notranslate" style="z-index: 12; font-size: 111%;"><pre><code># Example edge detector
+# [-1 -1 -1]
+# [-1 8  -1]
+# [-1 -1 -1]
+
+edge_kernel = np.array([[-1, -1, -1],
+                        [-1, 8, -1],
+                        [-1, -1, -1]])
+
+edge = convolve2d(im, edge_kernel, 'same')
+plt.figure()
+plt.imshow(edge,cmap='gray')</code></pre></div></div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; left: 721px; top: 308px;" data-block-id="ad08c3dfe1a250f378b7d725d07d424b"><div class="sl-block-content" data-line-x1="181" data-line-y1="16" data-line-x2="181" data-line-y2="145" data-line-color="#00ff00" data-line-start-type="none" data-line-end-type="line-arrow" style="z-index: 13;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="1" height="129" viewbox="181 16 1 129"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="181" y1="16" x2="181" y2="143"></line><line stroke="#00ff00" stroke-width="2" x1="181" y1="16" x2="181" y2="143"></line><path style="fill: rgba(0,0,0,0);" stroke="#00ff00" stroke-width="2" transform="translate(181,143) rotate(180)" d="M 6 6 L 0 0 L -6 6"></path></svg></div></div>
+<div class="sl-block" data-block-type="image" style="width: 261px; height: 252px; left: 590px; top: 437px; min-width: 4px; min-height: 4px;" data-block-id="a11ef0dec9be94bf360d18d1f5c0ad2a"><div class="sl-block-content" style="z-index: 14;"><img data-natural-width="261" data-natural-height="252" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/b95e1936c7d16c589575ae7744f7a4bd.png"></div></div></section><section data-id="6c3b89217b11d63cd540ab31f0d203a3"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="b6ffdbb41cd18b2c1cb1b5878c3ec94f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2>convolutionS CAN BLUR</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 261px; height: 252px; left: 590px; top: 73px; min-width: 4px; min-height: 4px;" data-block-id="a54649f2fe412fbc34beff1df43bfa57"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="261" data-natural-height="252" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/82364d03be9a38f64fc7bcafffd289cb.png"></div></div>
+<div class="sl-block" data-block-type="code" style="width: 495px; height: 499px; left: 29px; top: 167px;" data-block-id="5ebf1626cacbc24b54b428a257811e95"><div class="sl-block-style" style="z-index: 12;"><div class="sl-block-content notranslate" style="z-index: 12;"><pre><code># Example blur kernel
+# [.0625 .125 .0625]
+# [.125 .25  .125]
+# [.0625 .125 .0625]
+
+blur_kernel = np.array([[0.0625, 0.125, 0.0625],
+                        [0.125, 0.25, 0.125],
+                        [0.0625, 0.125, 0.0625]])
+
+blur = convolve2d(im, blur_kernel, 'same')
+plt.figure()
+plt.imshow(blur,cmap='gray')</code></pre></div></div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; left: 721px; top: 308px;" data-block-id="aa1f698e655f4cbd32f9a087e02ff8a1"><div class="sl-block-content" data-line-x1="181" data-line-y1="16" data-line-x2="181" data-line-y2="145" data-line-color="#00ff00" data-line-start-type="none" data-line-end-type="line-arrow" style="z-index: 13;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="1" height="129" viewbox="181 16 1 129"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="181" y1="16" x2="181" y2="143"></line><line stroke="#00ff00" stroke-width="2" x1="181" y1="16" x2="181" y2="143"></line><path style="fill: rgba(0,0,0,0);" stroke="#00ff00" stroke-width="2" transform="translate(181,143) rotate(180)" d="M 6 6 L 0 0 L -6 6"></path></svg></div></div>
+<div class="sl-block" data-block-type="image" style="width: 261px; height: 252px; left: 590px; top: 437px; min-width: 4px; min-height: 4px;" data-block-id="7a1bacb96a23e8540c6d50bec79ebf6a"><div class="sl-block-content" style="z-index: 14;"><img data-natural-width="261" data-natural-height="252" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/e787d81a5ffb057e429d73a86be820ba.png"></div></div></section><section data-id="8dfe3c1af22fb3e4fb5cdac3b8a783ee"><div class="sl-block" data-block-type="text" style="width: 413px; left: 30px; top: 85px; height: auto;" data-block-id="3c48674c7915c724a422b443cb587305"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h2>
+<span style="color:#FF8C00">CONVNETS LEARN<br>
+FILTERS</span> BASED UPON DATA + LABELS</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 228px; height: auto;" data-block-id="ab4545b6d28d621ed712bc2582790c8b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 13; text-align: left;">
+<p>Before <span style="color:#FF8C00">ConvNets</span>, humans mostly "hand engineered"  convolutions for their domain, using  hunches and experimentation.</p>
+
+<p> </p>
+
+<p><span style="color:#FF8C00">ConvNets</span> allow neural networks to create filters appropriate for problem domain.</p>
+
+<p><br>
+These created convolutions are highly reusable.</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 451px; height: 280px; left: 480px; top: 148px; min-width: 4px; min-height: 4px;" data-block-id="aca85f6e5a78e9d9384339103cdc8204"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1350" data-natural-height="837" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/ce71bfb2540ce3aacb0430d3cf0bcedf.jpg"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 451px; left: 480px; top: 466px;" data-block-id="9ab6d7b8b4172b4a6baf3f9ab5216147"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p>Deep Visualization Toolbox</p>
+
+<p><span style="font-size:0.5em">(https://github.com/yosinski/deep-visualization-toolbox)</span></p>
+</div></div></section><section data-id="cd253f19f65925a8678fabe9a0124c38"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="ff5e41cc957fbe120989787e19574c5d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h2>
+<span style="color:#FFA500">Convolutions</span> Are <span style="color:#FFA500">fast on GPus</span>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 177px; height: auto;" data-block-id="65b960507cc152811b400c89d877a7a8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 13; text-align: left;">
+<p>Part of the reason training convolutions became possible is their speed on GPUs.</p>
+
+<p> </p>
+
+<p>Multiply and Add especially suited to GPU computation.</p>
+
+<p> </p>
+
+<p>Hundreds of simple processors doing computation at once.</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 451px; height: 309px; left: 480px; top: 196px; min-width: 4px; min-height: 4px;" data-block-id="c502136777ad5d9d306935f1a7d5d48f"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="800" data-natural-height="548" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/a3cbd94e93141e020d340ee3f77c1b1b.png"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="bdb0c45fb1e242fde963704c88415206" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 420px; top: 513px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p><span style="font-size:0.5em">(Image from the ARM Blog</span><span style="font-size:0.5em">)</span></p>
+</div></div></section></section><section class="stack" data-id="19e4d6d73c2bae3688d2f279d2d4ff81"><section data-id="7b245700c8cf7110abb83fbd9f9273af"><div class="sl-block" data-block-type="text" style="width: 864px; left: 33px; top: 59px; height: auto;" data-block-id="2c7d97b425e5301cda7616510be287f2"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 11;" data-placeholder-text="Text">
+<h1>COMPUTER<br>
+VISION</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="f5e1b0fa1559567f9c6d7b93934f62c8" style="min-width: 4px; min-height: 4px; width: 634px; height: 764px; left: 388px; top: -52px;"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="415" data-natural-height="500" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/e6aec46ca75b47b78dd9acb73ec9cea0.jpg"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 864px; left: 33px; top: 476px; height: auto;" data-block-id="8e57d5124cc46c273c54e3657b4bd4e5"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 13;" data-placeholder-text="Text">
+<h1>BIRDS</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 864px; left: 33px; top: 317px; height: auto;" data-block-id="892fe69ca2cc46b78b704e6d6ef8868b"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 14;" data-placeholder-text="Text">
+<h1>&amp;</h1>
+</div></div></section><section data-id="5c1f885b07259f1d30ecb700aad5fc27" data-background-image="birding-with-python-and-machine-learning/fb4398800d9d648ee2ca04cf29aca404.jpg"><div class="sl-block" data-block-type="text" style="width: 864px; left: 30px; top: 58px; height: auto;" data-block-id="55bf0babb3425d562ef19a90767cf783"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 12;" data-placeholder-text="Text">
+<h1 style="text-align: right;">WHY<br>
+BIRDS</h1>
+</div></div></section><section data-id="fb906e70e27376a6f7e45577c9f84596"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 77px; height: auto;" data-block-id="905253765f641f9fd7440f8c70e4662d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Highly intelligent</h1>
+</div></div>
+
+
+<div class="sl-block" data-block-type="image" data-block-id="b48da22db3f9b485aa744c4f7ddea360" style="min-width: 4px; min-height: 4px; width: 806px; height: 438px; left: 76px; top: 180px;"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1919" data-natural-height="1042" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/697c4b1d4b3a730731ad56330acc16b4.png"></div></div></section><section data-id="76c66b2120def02d90914f1a568d5e47"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 77px; height: auto;" data-block-id="9c1f8e57856bb950b5fde0d6de3409ea"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Adapted to humans</h1>
+</div></div>
+
+
+<div class="sl-block" data-block-type="image" style="width: 411px; height: 438px; left: 273.5px; top: 180px; min-width: 4px; min-height: 4px;" data-block-id="103375d2e18bc10897cc3061e0c8864d"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="871" data-natural-height="929" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/d6f09b345a76ee7b7d10eb72943ec8a1.jpg"></div></div></section><section data-id="4d984974fe443e66e2953c38b6edf940"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 109px;" data-block-id="28076fa28b1deb72f59e914fc63b315e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+<h1>availability</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="59d74778c189fe27cc031c67aa22a49e" style="min-width: 4px; min-height: 4px; width: 290px; height: 290px; left: 472px; top: 220px;"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="0"><img data-natural-width="525" data-natural-height="525" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/744ef13dd237b3db609e765d1a3ded0a.jpg"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="eb454d8812ffff0c5e3c433b3925e798" style="min-width: 4px; min-height: 4px; width: 362px; height: 290px; left: 160px; top: 220px;"><div class="sl-block-content fragment" style="z-index: 11;" data-fragment-index="0"><img data-natural-width="1024" data-natural-height="820" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/5c08ad547418d23057afb012e464c394.jpg"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="68c4d06115087469fb47943aad66d97c" style="height: auto; min-width: 30px; min-height: 30px; width: 168px; left: 374px; top: 465px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; background-color: rgb(230, 145, 56);" data-fragment-index="1">
+<h3><strong>I live herE</strong></h3>
+</div></div>
+<div class="sl-block" data-block-type="line" data-block-id="a931fcf44cc69dc3db811d8a7a3e12e6" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 542px; top: 483px;"><div class="sl-block-content fragment" data-line-x1="158" data-line-y1="245" data-line-x2="288" data-line-y2="227" data-line-color="#000000" data-line-start-type="none" data-line-end-type="line-arrow" style="z-index: 15;" href="" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="130" height="18" viewbox="158 227 130 18"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="158" y1="245" x2="286" y2="227"></line><line stroke="#000000" stroke-width="2" x1="158" y1="245" x2="286" y2="227"></line><path style="fill: rgba(0,0,0,0);" stroke="#000000" stroke-width="2" transform="translate(286,227) rotate(82.117)" d="M 6 6 L 0 0 L -6 6"></path></svg></div></div>
+<div class="sl-block" data-block-type="shape" data-block-id="f8a9df9818285ae3be9784f4cbbc4366" style="min-width: 4px; min-height: 4px; width: 28px; height: 28px; left: 658px; top: 465px;"><div class="sl-block-content fragment" data-shape-type="symbol-star" data-shape-fill-color="rgb(230, 145, 56)" data-shape-stretch="true" style="z-index: 16;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 32 32"><g class="shape-element" fill="rgb(230, 145, 56)"><path d="M22.137 19.625l9.863-7.625h-12l-4-12-4 12h-12l9.875 7.594-3.875 12.406 10.016-7.68 9.992 7.68z"></path></g></svg></div></div></section><section data-id="4e25f61026f319c86a85217ff181d5b7" data-background-color="#4a86e8"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="9d5e32d6b90e4f925f1b9cc0cfd8d66c"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Robotic platform<br>
+to</h1>
+
+<h1>ExplorE Crow Intelligence</h1>
+</div></div></section><section data-id="14f25dea94f0096067b1ebe34e0fa0c2"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="3461d037236ec6ec6256dcfba7d97321"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Problem of detecting Birds <span style="color:#FFA500">transferable</span> to other species</h1>
+</div></div></section><section data-id="7d529d2a7ab826e5e07c22d17dbac850"><div class="sl-block" data-block-type="text" style="width: 864px; left: 48px; top: 95px; height: auto;" data-block-id="5df045a688c00b2cb8dc097ab4bd49d1"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text" dir="ui">
+<h1><span style="font-size:0.7em">Build aN IOT platform to<span style="color:#FFA500"> detect</span> <span style="color:#FFA500">and interact</span> with <span style="color:#FFA500">animals in the wild</span></span></h1>
+</div></div></section></section><section class="stack" data-id="c9996f4b152c05a7e5abe35ec8457f94"><section data-id="efec96b577fc4b2e218d8683bfc8bee0"><div class="sl-block" data-block-type="text" style="width: 864px; left: 57px; top: 38px; height: auto;" data-block-id="144cfbd6568c28b410251ff86b147159"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 12;" data-placeholder-text="Text">
+<h1 style="text-align:right">Deep<br>
+LEARNING<br>
+CAMERAS</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="193d8810d83138c8707e561f5e181ffa" style="min-width: 4px; min-height: 4px; width: 717px; height: 733px; left: -77px; top: -17px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="438" data-natural-height="448" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/aae406d9d0f2c422c57f6b5ac11915a0.jpg"></div></div></section><section data-id="3d14a2e1f371cdc21a8822a8f0e0a6b4"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="7274e8fed2e78fac196a5af5ad5c6659"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>
+<span style="color:#FF8C00">new</span> computational platform</h1>
+</div></div></section><section data-id="0e420e43caa5d4e9caedd2732cf1ff58"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="7ee21214eea05ca93290367e333f7946"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>don't understand <span style="color:#FF8C00">full implications</span> of platform just yet</h1>
+</div></div></section><section data-id="5339e4b0273caddd75227c7d75ad22a0"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="a8fef583ec12377aec06a81a6b613f7c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2><span style="color:#FFA500">Amazon Deeplens</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 126px; height: auto;" data-block-id="fe1eadced0fba894300ceb8a91f9bd48"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 12; text-align: left;">
+<p>Deep Learning Video Camera for Developers</p>
+
+<p> </p>
+
+<p>To be released June 14</p>
+
+<ul>
+	<li>Object detection</li>
+	<li>Style Transfer</li>
+	<li>Face Detection</li>
+	<li>Activity Recognition</li>
+</ul>
+
+<p> </p>
+
+<p>1080p / 4MP Camera </p>
+
+<p><em><span style="color:#FFA500"><strong>$249 price point</strong></span></em></p>
+
+<p><em>Cloud connected, tightly integrated into AWS products</em></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 398px; height: 398px; left: 506.5px; top: 126px; min-width: 4px; min-height: 4px;" data-block-id="eae6c6ba6d6127804ce764c0f3e03c96"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="355" data-natural-height="355" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/578d068ec1a65afe85f6c70c02940e2c.jpg"></div></div></section><section data-id="c7e369f7150529208340b77d088f2565"><div class="sl-block" data-block-type="text" style="width: 413px; left: 499px; top: 70px; height: auto;" data-block-id="8bd7de1471d4ebd380dd736e9ecefe95"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2><span style="color:#FF8C00">Raspberry Pi</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 499px; top: 112px; height: auto;" data-block-id="81b9fa6b2ac84c8e4767d0310f1277fe"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 12; text-align: left;">
+<p>ARM64 Linux computer (v3)</p>
+
+<p> </p>
+
+<p>Use to stream webcam to another computer for inference. </p>
+
+<p> </p>
+
+<p><strong><span style="color:#FFA500">Poor Man's Deep Learning Camera</span></strong> on Github</p>
+
+<p> </p>
+
+<p><span style="color:#FF8C00"><span style="font-size:1.2em"><strong>$10-30</strong></span></span></p>
+
+<p><em><span style="font-size:1.0em">Run inference on external PC</span></em></p>
+
+<p><em>GPIO Pins for response</em></p>
+
+<p> </p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 722px; height: 722px; left: -242px; top: 0px; min-width: 4px; min-height: 4px;" data-block-id="e7a1162510edb23a98fcbe4700d64c73"><div class="sl-block-style" style="z-index: 11;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="840" data-natural-height="840" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/cf3a01fd79e2af9021dfc32735c03633.jpg"></div></div></div></section><section data-id="2d93320527c3ebc39ba4d38d84081c30"><div class="sl-block" data-block-type="text" style="width: 413px; left: 499px; top: 70px; height: auto;" data-block-id="c58f5abb8c22fe2c240453cdd6fcbd6f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2><span style="color:#FF8C00">Google AIY Project</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 499px; top: 121px; height: auto;" data-block-id="39db7a1de1897c7d09a77f921f1f9309"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 12; text-align: left;">
+<p>Rasberry Pi Zero with <a href="http://movidius.com/myriadx" target="_blank">Movidius MA2450</a> Neural Accelerator</p>
+
+<p> </p>
+
+<p><span style="font-size:1.2em"><span style="color:rgb(255, 140, 0)"><strong>60x</strong></span></span> faster than Raspberry Pi 3</p>
+
+<p> </p>
+
+<p><span style="font-size:1.2em"><span style="color:#FF8C00"><strong>$80</strong></span> </span>price point</p>
+
+<p> </p>
+
+<p>Kinda tricky to build</p>
+
+<p> </p>
+
+<p>Default Demo is a "<strong><span style="color:#FFA500">Joy Detector</span></strong>"</p>
+
+<p> </p>
+
+<p>Only available at Target (?!)</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 755px; height: 566px; left: -207px; top: 74px; min-width: 4px; min-height: 4px;" data-block-id="2a51f158949c4e52a3667dcc90e651cf"><div class="sl-block-style" style="z-index: 11; transform: rotate(90deg);"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1800" data-natural-height="1350" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/eed304c51abd40442e8c224d7913b2c1.jpg"></div></div></div></section><section data-id="7ea2e1eec2c601d93ac2e0e052828590"><div class="sl-block" data-block-type="text" style="width: 413px; left: 499px; top: 70px; height: auto;" data-block-id="7d7b6861148290b006bc4f3510e74119"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2><span style="color:#FF8C00">NVIDIA Jetson</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 499px; top: 123px; height: auto;" data-block-id="0b9540899e1d5ca392a2072bcaa7860d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 12; text-align: left;">
+<p>ARM Linux computer with NVIDIA GPU </p>
+
+<p> </p>
+
+<p>SATA, HDMI, CSI (Camera), SPI, GPIO, I2C, Bluetooth, WiFi</p>
+
+<p> </p>
+
+<p><span style="font-size:1.0em"><strong><span style="color:#FFA500">Rich Man's Deep Learning Camera</span></strong> on Github</span></p>
+
+<p> </p>
+
+<p><span style="color:#FF8C00"><strong><span style="font-size:1.2em">$500</span></strong></span> for TX1 </p>
+
+<p> </p>
+
+<p>(My preferred environment for Dev / Experimentation)</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 566px; height: 566px; left: -111px; top: 74.5px; min-width: 4px; min-height: 4px;" data-block-id="e982c59cdef5e926ceb2de414393bbc6"><div class="sl-block-style" style="z-index: 11;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="840" data-natural-height="840" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/c59f8aabe300bf47754f8c667a30af78.jpg"></div></div></div></section><section data-id="b7fdd9acfd6b984247f6b3d65d64f249"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="c8e693e0759607dd1f49eeb8f7248c28"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2><span style="color:#FFA500">Deep learning Cameras</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 247px; height: auto;" data-block-id="aec0c5800aab542738ff5f6b47060661"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<ul>
+	<li>Is it a photographer who knows when to shoot?</li>
+	<li>Platform for detecting objects?</li>
+	<li>Platform for detecting specific activities?</li>
+	<li>Platform for detecting human emotions?</li>
+	<li>Platform for occupancy sensing, shopper tracking?</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="line" data-block-id="5137f352988bf92ab2e1edc3028429b2" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 188px; top: 196px;"><div class="sl-block-content fragment" data-line-x1="-192" data-line-y1="297" data-line-x2="404" data-line-y2="-54" data-line-color="#e69138" data-line-start-type="none" data-line-end-type="none" style="z-index: 13;" data-line-width="22px" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="596" height="351" viewbox="-192 -54 596 351"><line stroke="#e69138" stroke-width="22" x1="-192" y1="297" x2="404" y2="-54"></line></svg></div></div>
+<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 188px; top: 189px;" data-block-id="a03c04763deab3f73d2767a1eb89650b"><div class="sl-block-content fragment" data-line-x1="389" data-line-y1="262" data-line-x2="-207" data-line-y2="-76" data-line-color="#e69138" data-line-start-type="none" data-line-end-type="none" style="z-index: 14;" data-line-width="22px" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveaspectratio="xMidYMid" width="596" height="338" viewbox="-207 -76 596 338"><line stroke="#e69138" stroke-width="22" x1="389" y1="262" x2="-207" y2="-76"></line></svg></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="faeb3c798d0023a2d6c626ba18647965" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 490px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;" data-fragment-index="1">
+<h1>platform for birding</h1>
+</div></div></section></section><section class="stack" data-id="d6d71ef9dd0ee65fe69cdf22533827a9"><section data-id="40b9cb4520542f7a3f9658a5f1e38b86"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="c5d8990adf68b1c1aebe3342b53d47d2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Deep learning</h1>
+
+<h1><span style="color:#FFA500">DEVELOPMEnT CYCLE FOR HACKERS</span></h1>
+</div></div></section><section data-id="dea7c2a64f98e1f0e9d97479b5f5e8ad" data-background-color="#4a86e8"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 70px; height: auto;" data-block-id="30ce4d0a12d2c09eab93618640f690c7"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1 style="text-align: left;">Steal A model</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 187px; height: auto;" data-block-id="6e320351168f94d45be7a90cee921724"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12;">
+<h1 style="text-align: left;">PROOF OF CONCEPT</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 301px; height: auto;" data-block-id="d87c703b962f32149bc65df22d95205f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 13;">
+<h1 style="text-align: left;">DEploy and Collect Data</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 437px; height: auto;" data-block-id="33f436191b1f72625852b1c648724ef6"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 14;">
+<h1 style="text-align: left;">Label &amp; AUGMEnt NEw DATA</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 573px; height: auto;" data-block-id="23464889d51d46600b441b9d80ab22de"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 15;">
+<h1 style="text-align: left;">Retrain &amp; REDeploy</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 70px; height: auto;" data-block-id="d2d3811503279207e3471b45c5779e15"><div class="sl-block-content fragment" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 16;" data-fragment-index="0">
+<h1 style="text-align:left"><span style="color:#FFA500">Steal A model</span></h1>
+</div></div></section></section><section class="stack" data-id="4df54b6f9ffbb67ea73ed5b661a760e5"><section data-id="b8898fa9aa3a5aab7131814ed00f608c" data-background-color="#4a86e8"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="84f27a6d9a456217deb391db4b46c11d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>step 1: steal a model</h1>
+</div></div></section><section data-id="57f2f5b756fae4edb76879616a2ce7b0"><div class="sl-block" data-block-type="text" style="width: 807px; left: 76px; top: 266px; height: auto;" data-block-id="b6a3abe34c3c796151b1416e72e2aec8"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>YOLO</h1>
+
+<p>(You Only Look Once)</p>
+</div></div></section><section data-id="c0c52dfb3f418632e8dab82cfbd3dcb3"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 52px; height: auto;" data-block-id="496776e57b0a75e1d20e26e004a6ce49"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Object Detection with localization</h1>
+
+<p>(What &amp; Where)</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 806px; height: 453px; left: 80px; top: 247px;" data-block-id="4dc511ec2ff797f6b14f3f9c6d5fae33"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1920" data-natural-height="1080" data-src="birding-with-python-and-machine-learning/df392a00bae052b939b84566ecea4be0.jpg"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 500px; top: 664px;" data-block-id="b6373cc5ff8bc4bc04e5b9149f85d145"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p>Joseph Redmon</p>
+</div></div></section><section data-id="50a40639f0cc74e09c7c54ca76734c51"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 264px; height: auto;" data-block-id="2233f05b99abc7144c81c570eeb667d0"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Use Tiny Yolo Model <span style="color:#FFA500">trained on VOC</span> ported to Tensorflow</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 490px;" data-block-id="0c95546f8f94fcd0067284c50d700f63"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p><span style="font-size:1.2em"><strong><span style="color:rgb(255, 165, 0)">Darkflow</span></strong></span></p>
+</div></div></section><section data-id="2cd61c8f5412ed41ca2ed7d577444703"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 210px;" data-block-id="a7c78a63f234f144f407aca6723c5096"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h2><span style="font-size:1.2em">Trained on 20 Classes of Objects</span></h2>
+
+<ul>
+	<li>person</li>
+	<li>
+<span style="color:#FFA500">bird</span>, cat, cow, dog, horse, sheep</li>
+	<li>aeroplane, bicycle, boat, bus, car, motorbike, train</li>
+	<li>bottle, chair, dining table, potted plant, sofa, tv/monitor</li>
+</ul>
+</div></div></section><section data-id="f6a3880e5e0ebd6883e15ac7d06f08e5"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="9a98e6b726b206262f55b07d782c4b03"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>
+<span style="color:#FFA500">Bootstrap</span> by first detecting <span style="color:#FFA500">birds</span>
+</h1>
+</div></div></section></section><section class="stack" data-id="5302fbb68c7616ba367683ad87146ccc"><section data-id="6ac7ad8863b1f8e2989a2a9cdc28ecd3" data-background-color="#e69138"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="607d29023de27b71e700964e42bbb29d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>step 2: Proof of concept</h1>
+</div></div></section><section data-id="734362b842606053e2fc1ec37014ab67"><div class="sl-block" data-block-type="text" style="width: 864px; left: 30px; top: 58px; height: auto;" data-block-id="d14f474f3d8b3332a8132f22a98b4077"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text">
+<h1>Detection<br>
+IN<br>
+THE<br>
+WILD</h1>
+</div></div></section><section data-id="6b6391ed5ca82f03f1c6d930ff3294d7"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 162px; height: auto;" data-block-id="fe70c8af633a8ca0dfdd01d448d5b898"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2>Raspberry Pi with inference on desktop</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 307px; height: auto;" data-block-id="3b15440c20f5e1001b1b215b3d8f9958"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 12; text-align: left;">
+<p>Initial proof of concept streamed USB webcam from Raspberry PI to desktop computer.</p>
+
+<p> </p>
+
+<p>Inference for Tiny YOLO model can even be done on CPU alone.</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 451px; height: 375px; left: 480px; top: 162px; min-width: 4px; min-height: 4px;" data-block-id="097eb1bce76f4687bd372cf7e630271f"><div class="sl-block-content" style="z-index: 11; border-style: solid; border-width: 54px;"><img style="" data-natural-width="627" data-natural-height="521" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/50dc8624344cf1eed56ec2ffe050497c.png"></div></div></section><section data-id="57e83e12ca86c3aaa0c7b97466d28ca4" data-background-color="#4a86e8"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="873ca113480e85b6a943cc6ea1554db4"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>wait a few days...</h1>
+</div></div></section><section data-id="fc8952e50d1a6d929dba321c679748ac"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 286px; height: auto;" data-block-id="6961df1274c14245002e862ec26c971c"><div class="sl-block-content fragment" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12;" data-fragment-index="0">
+<h1>Success!</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="d2c5cba469ea87160537754b8f9257bd" style="min-width: 4px; min-height: 4px; width: 640px; height: 480px; left: 160px; top: 110px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="640" data-natural-height="480" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/dd6ef80f1b5b86ce10ce0a6116cafcd8.jpg"></div></div></section></section><section class="stack" data-id="6e68870fd15c05016ab925a4c99a13cb"><section data-background-color="#4a86e8" data-id="444cae23465be180e73025e1826d70de"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="83fb02edb9129f78e63dcef13ddc3470"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>step 3: Deploy And Collect data</h1>
+</div></div></section><section data-id="eee98a2a4a1718dbbee10fa259dc4da4"><div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 573px; height: 573px; left: 194px; top: 126px;" data-block-id="c237de3f9103a88f11afd26076c4acf5"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1000" data-natural-height="1000" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/8872db93a734efced98a150143b1307b.jpg"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 1266px; height: 707px; left: -104px; top: -3px;" data-block-id="aa75ae2dde16e7f53725ebb86510d3f8"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="0"><img style="" data-natural-width="1500" data-natural-height="838" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/184726f2f900f63b12700f2f9c180432.jpg"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 52px;" data-block-id="b905a015867a2ad4f5ae1f038486f1d2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+<h1>Components in Place</h1>
+</div></div></section><section data-id="e073c259f4ebd033d562c2f9513c058e"><div class="sl-block" data-block-type="image" style="width: 691px; height: 518px; left: 135px; top: 42px; min-width: 4px; min-height: 4px;" data-block-id="2d61a15b4e21a03db7c7ac63a80c686c"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="384" data-natural-height="288" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/ed5708b80166fdd16098d9ac65e65402.gif"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 588px; height: auto;" data-block-id="f4df5d75a1597fbc924d7c4a610d459c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Detection and REcording</h2>
+</div></div></section><section data-id="2727a32d792ad84c3b3ef3dd0a2df3e6"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="d659879897ff65f47d28613b37db3d22"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;">
+<h2><span style="color:#FFA500">Rich Man's Deep Learning Camera</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 197px; height: auto;" data-block-id="d4641ca8368a6af0fa8386851b793276"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 13; text-align: left;">
+<p>Uses <strong><span style="color:#FFA500">YOLO v2</span></strong> on Tensorflow (<strong><span style="color:#FFA500">Darknet</span></strong>) to detect birds</p>
+
+<p> </p>
+
+<p><span style="color:#FFA500"><strong>Records 10s clip</strong></span> before + after detection with frame buffer</p>
+
+<p> </p>
+
+<p>Includes <span style="color:#FFA500"><strong>cron job</strong></span> to turn detection sequences into MP4s with <strong><span style="color:#FFA500">ffmpeg</span>. </strong>(Saves disk space)</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 451px; height: 213px; left: 480px; top: 84px; min-width: 4px; min-height: 4px;" data-block-id="2ce193af579e4e8b2c8bcaaece7e0edf"><div class="sl-block-content" style="z-index: 12; border-style: solid; border-width: 21px;"><img data-natural-width="740" data-natural-height="349" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/3b11842d3d000e2f1c5f323e01e460ea.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="da588c61712afba4e673e432eb45efdf" style="min-width: 4px; min-height: 4px; width: 451px; height: 254px; left: 480px; top: 310px;"><div class="sl-block-content" style="z-index: 14;"><img style="" data-natural-width="1280" data-natural-height="720" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/f2d092eb9a5d9b87674ad3bbcc18c2c9.jpg"></div></div></section><section data-id="96edbf424246b968d9450134ebd7d73f"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="02a883a2b85544b02c649a903a7ef206"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>
+<span style="color:#FFA500">Bootstrapping</span> more training data</h1>
+</div></div></section><section data-id="d492ea3decfdee82bfcb992ee90ab467"><div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 84px; height: auto;" data-block-id="48ef0c87f95be3e81e94709f78af356d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 11;" dir="ui">
+<h2>
+<span style="color:#FFA500">Use Detected birds</span> <span style="color:#FFA500">as input</span> for <span style="color:#FFA500">training new model</span>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 29px; top: 219px; height: auto;" data-block-id="d164ff280935a7bc12cbbc880b811c3e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 13; text-align: left;">
+<p>Label the newly detected "bird" class down to species level.</p>
+
+<p> </p>
+
+<p>Get rid of last layer in NN.</p>
+
+<p> </p>
+
+<p>Retrain on new set of classes.</p>
+
+<p>(<strong><span style="color:#FFA500">Bluejay</span></strong>, <span style="color:#FFA500"><strong>Dove</strong></span>, <span style="color:#FFA500"><strong>Cardinal</strong></span>, etc.)</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 451px; height: 254px; left: 480px; top: 84px; min-width: 4px; min-height: 4px;" data-block-id="767c92eba34132ef9baa698fca277f66"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1280" data-natural-height="720" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/111f4fc924077b623e8f1cd8d09c15f8.png"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 451px; height: 254px; left: 480px; top: 364px;" data-block-id="64c94c26c71233d4e80ed70090d8f71a"><div class="sl-block-content" style="z-index: 14;"><img style="" data-natural-width="1280" data-natural-height="720" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/254d2011bbc8606a91fd4a87d61cc3a4.png"></div></div></section><section data-id="9a4e8d9430db21928415577151f11a86"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 36px; height: auto;" data-block-id="1ff3bdbce8d32c323a45b0a8324c0bf1"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>
+<span style="color:#FFA500">Problem:</span> each day captures <span style="color:#FFA500">~1hr</span> of birds, <span style="color:#FFA500">90%</span> of these guys</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 806px; height: 453px; left: 80px; top: 247px;" data-block-id="a79e5b0e54c59edeeb356e0ac6eb8752"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1280" data-natural-height="720" data-src="birding-with-python-and-machine-learning/fbfd817a1195991aa70d3f392fe0e515.png"></div></div></section></section><section class="stack" data-id="8ed36dedca41dbfaf6eaa6adcf174dac"><section data-background-color="#e69138" data-id="950c437071a45533011bb2a1f8552ed5"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="bdc04c11b7b4d2ea3bab9c926b8aaeb4"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>step 4: Label and Augment new Data</h1>
+</div></div></section><section data-id="091b204b78ca2a6a4962c6deb68ad93f"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 42px; height: auto;" data-block-id="2a5d8aef5a1e3da3983945d893adc8a3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Generate<br>
+new Labeled Dataset with</h2>
+
+<p><span style="font-size:1.2em"><strong><span style="color:rgb(255, 165, 0)">LabelIMG</span></strong></span></p>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" data-block-id="7645f86e55fa7136e8aecd725ffeba43" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 623px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>https://github.com/tzutalin/labelImg</p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 806px; height: 477px; left: 77px; top: 164px;" data-block-id="26c48253370b075cd851bc1ce0525380"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="2283" data-natural-height="1350" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/2f7553371282abb8bcfcb0e3373f4752.png"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 4px; min-height: 4px; width: 252px; height: 265px; left: 180px; top: 350px;" data-block-id="3a4bf1c8b840d602ce60bb3e75eea09c"><div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="0"><img style="" data-natural-width="816" data-natural-height="858" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/2e6791781231bffa86a676c3785a8129.png"></div></div></section><section data-id="81bd72449e4a10ea2d55cb9e2a3182ee"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="f8699283c5a0c2f2dcaf4321b005d6c7"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Add new <span style="color:#FFA500">Classes </span>for each <span style="color:#FFA500">new species</span> you detect</h1>
+</div></div></section><section data-id="0064512bef18d16396e795516bad0ece"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="28c1352ccafa20f3eb1f3146099a3c56"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>USE Data <span style="color:#FFA500">augmentation</span> to <span style="color:#FFA500">extend</span> and <span style="color:#FFA500">generalize</span> dataset</h1>
+</div></div></section><section data-id="9ea8b93d36f1de46207fd7b01d80f7dc"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="98f58ae48c99ad5db0e7ac5ff792f391"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>At least <span style="color:#FFA500">200</span> labeled Images</h1>
+</div></div></section></section><section class="stack" data-id="0e3ee7787829e94b80c7c98d05c73a41"><section data-background-color="#4a86e8" data-id="9ebb0cbf1536827d405883ad755202f6"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="225a3ffb5809d2c68eca82628c1dc119"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>step 5: Retrain and redeploy</h1>
+</div></div></section><section data-id="c107215491551830d7f632d533fb0336"><div class="sl-block" data-block-type="text" style="width: 806px; left: 91px; top: 155px; height: auto;" data-block-id="1b83a7e6af3346853ef1a206b1c8bb95"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1><span style="font-size:1.2em">Retrain with new labels</span></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 862px; left: 49px; top: 318px;" data-block-id="f60a9226b29c7331f5c4684f6f8d1776"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" dir="ui">
+<ul>
+	<li><span style="font-size:1.4em">Set number of classes in Config</span></li>
+	<li><span style="font-size:1.4em">Change # Filters in Layer Before Last</span></li>
+	<li><span style="font-size:1.4em">Set # of Layers to train in<span style="color:#FFA500"> ./darkflow/net/build.py</span> (line 59)</span></li>
+	<li><span style="font-size:1.4em">Run Trainer</span></li>
+</ul>
+</div></div></section><section data-id="3ed2c44164d1d4d9f3d00c7502302192"><div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 790px; height: 773px; left: 85px; top: 210px;" data-block-id="edbe4a4db26aab2bae2a423037e83e87"><div class="sl-block-content notranslate" style="z-index: 11;"><pre><code>$ flow --model cfg/tiny-yolo-voc12.cfg --load bin/tiny-yolo-voc.weights --train \
+--annotation train/Annotations --dataset train/Images
+
+Parsing ./cfg/tiny-yolo-voc.cfg
+Parsing cfg/tiny-yolo-voc12.cfg
+Loading bin/tiny-yolo-voc.weights ...
+Successfully identified 63471556 bytes
+Finished in 0.21691584587097168s
+
+Building net ...
+Source | Train? | Layer description                | Output size
+-------+--------+----------------------------------+---------------
+       |        | input                            | (?, 416, 416, 3)
+ Load  |  Nope  | conv 3x3p1_1  +bnorm  leaky      | (?, 416, 416, 16)
+ Load  |  Nope  | maxp 2x2p0_2                     | (?, 208, 208, 16)
+ Load  |  Nope  | conv 3x3p1_1  +bnorm  leaky      | (?, 208, 208, 32)
+ Load  |  Nope  | maxp 2x2p0_2                     | (?, 104, 104, 32)
+ Load  |  Nope  | conv 3x3p1_1  +bnorm  leaky      | (?, 104, 104, 64)
+ Load  |  Nope  | maxp 2x2p0_2                     | (?, 52, 52, 64)
+ Load  |  Nope  | conv 3x3p1_1  +bnorm  leaky      | (?, 52, 52, 128)
+ Load  |  Nope  | maxp 2x2p0_2                     | (?, 26, 26, 128)
+ Load  |  Nope  | conv 3x3p1_1  +bnorm  leaky      | (?, 26, 26, 256)
+ Load  |  Nope  | maxp 2x2p0_2                     | (?, 13, 13, 256)
+ Load  |  Nope  | conv 3x3p1_1  +bnorm  leaky      | (?, 13, 13, 512)
+ Load  |  Nope  | maxp 2x2p0_1                     | (?, 13, 13, 512)
+ Load  |  Nope  | conv 3x3p1_1  +bnorm  leaky      | (?, 13, 13, 1024)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 13, 13, 1024)
+ Init  |  Yep!  | conv 1x1p0_1    linear           | (?, 13, 13, 85)
+-------+--------+----------------------------------+---------------
+Running entirely on CPU
+cfg/tiny-yolo-voc12.cfg loss hyper-parameters:
+	H       = 13
+	W       = 13
+	box     = 5
+	classes = 12
+	scales  = [1.0, 5.0, 1.0, 1.0]
+Building cfg/tiny-yolo-voc12.cfg loss
+Building cfg/tiny-yolo-voc12.cfg train op</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 82px;" data-block-id="636dec94b988b3ded9c47be942184efb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<h1>Training!</h1>
+</div></div></section><section data-id="09ceef65765b3f0fd21ff8edcfa1b75c"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 42px; height: auto;" data-block-id="024a65caa0ab7fd27b79f7fcc9ebfff2"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>End up with Better Model</h2>
+</div></div>
+<div class="sl-block" data-block-type="video" style="min-width: 30px; min-height: 30px; width: 878px; height: 494px; left: 35px; top: 140px;" data-block-id="91ba08100872ef6a9ecf103a49004cd2"><div class="sl-block-content" style="z-index: 12;" data-media-id="4898194" data-video-thumb="https://s3.amazonaws.com/media-p.slid.es/videos/871075/JJcNGKEe/vision_thumb_00001.jpg"><video playsinline="" controls="controls" poster="https://s3.amazonaws.com/media-p.slid.es/videos/871075/JJcNGKEe/vision_thumb_00001.jpg" data-autoplay="" data-lazy-loaded="" data-paused-by-reveal="" data-src="birding-with-python-and-machine-learning/1e3deeba8a90adab2f6281adea0b3b62.mp4"></video></div></div></section></section><section class="stack" data-id="9c236e8b5787cc41dd6b01aed8274b8e"><section data-id="57cec16f0dbf5a16cf50e036c76162a0"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="b5e20fefd22d20aab0143327811d63ef"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>What now?</h1>
+</div></div></section><section data-id="d3e40ad53daaea711fae5f68548c5e89"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 131px; height: auto;" data-block-id="c4649c93683c9ad1132306125430b137"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Audio data</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 236px; height: auto;" data-block-id="16a89720a3233dcb11ff59a064ba032d"><div class="sl-block-content fragment" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;" data-fragment-index="0">
+<h1>TIme of day by species</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 350px; height: auto;" data-block-id="5f56dc7fd79587f2f4899e3d54f64f50"><div class="sl-block-content fragment" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12;" data-fragment-index="1">
+<h1>INFRARED AT NIGHT</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 458px; height: auto;" data-block-id="a334319bbe7f21e0230f66b60549db07"><div class="sl-block-content fragment" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 13;" data-fragment-index="2">
+<h1>WATER VS Food</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 566px; height: auto;" data-block-id="67d5bda158dd40b23593d4fda9a3d681"><div class="sl-block-content fragment" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 15;" data-fragment-index="3">
+<h1>WEATHER AND ACTIVITY</h1>
+</div></div></section><section data-id="0ab916fa933be97a9828dcbd78f526b2"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="2b83ef138a9406a190f6c18486ca2d48"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Deploy in wild?</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="9a678d81346dff060249cc2760fa622d" style="min-width: 4px; min-height: 4px; width: 474px; height: 80px; left: 83px; top: 369px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="474" data-natural-height="80" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/02214dbcf2b21b49f96c97b137a3d69a.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="d0dd28e29c490c759547b4837b469446" style="min-width: 4px; min-height: 4px; width: 521px; height: 92px; left: 380px; top: 490px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="521" data-natural-height="92" style="" data-lazy-loaded="" data-src="birding-with-python-and-machine-learning/eeff400403110c688ddc4d77e1ab3182.png"></div></div></section></section><section class="stack" data-id="481dadb56ce19643d69e96b08fc27ada"><section data-id="94c2f18c08748c1fa8153851c083881c"><div class="sl-block" data-block-type="text" style="width: 864px; left: 30px; top: 58px; height: auto;" data-block-id="dea518e06c8f17d4deaa419de2fb2ffe"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text">
+<h1>OLD DATA BecomEs <span style="color:#FFA500">more valuable</span> AS NEW MODELS GET CREATED</h1>
+</div></div></section><section data-id="1f7ee271f6c2ff17ba79a7d490eca06c"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 266px; height: auto;" data-block-id="e7b5465f2c3b8de1a4064c1fec925c2f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Example with clothing, brands, emotion, age detection</h1>
+</div></div></section></section><section data-id="240b62d5855a1e5839c3845270b37787"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 324px; height: auto;" data-block-id="45e85630ed66d6f2af1fa23c5030b8b1"><div class="sl-block-content fragment" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;" data-fragment-index="0">
+<h1>questions?</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 509px; height: auto;" data-block-id="7ded93bf98213a7bc1f81e94c9bbfdfb"><div class="sl-block-content fragment" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;" data-fragment-index="1">
+<h1>datadog is hiring!</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 202px; height: auto;" data-block-id="f855cee13ee05e16e47a92c57fe516b3"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 13;">
+<h1><span style="color:#FFA500">Thank you!</span></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 582px; height: auto;" data-block-id="e763f573c84e018c1f4d0aba7105f1a0"><div class="sl-block-content fragment" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 14;" data-fragment-index="2">
+<p><span style="color:#FFA500">@burningion</span> on Twitter if you want to chat</p>
+</div></div></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":1243870,"slug":"birding-with-python-and-machine-learning","title":"Birding with Python and Machine Learning","description":"Slides from my 2018 Pycon talk, Birding with Python and Machine Learning","width":960,"height":700,"visibility":"all","published_at":"2018-05-11T20:34:41.313Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/655e3a085957a658476475a9223a13aa/thumb.jpg?1526055914","view_count":64,"user":{"id":871075,"username":"zothcorp","name":"KP Kaiser","description":"","thumbnail_url":"https://www.gravatar.com/avatar/ef0cbc917df895c7e4a097ecd0e2abf0?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":true,"lite":false,"team_id":null,"settings":{"id":1185725,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"none","transition":"none","theme_id":null,"theme_font":"overpass2","theme_color":"black-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":false,"slide_count":91,"rtl":false,"version":2,"collaborative":true,"deck_user_editor_limit":1,"data_updated_at":1526062430890,"font_typekit":null,"font_google":null,"notes":{"5c1f885b07259f1d30ecb700aad5fc27":"pigeons racing, drag them to a location, and they race flying back to their respective homes\none of the last remaining animals we encounter in daily lives\na few species have largely adapted to humans","76c66b2120def02d90914f1a568d5e47":"Carrion Crow\nIn Japan, drops nuts for cars to run over in pedestrian crossings and waits for walk signal for safety","fb906e70e27376a6f7e45577c9f84596":"researchers have shown crows can solve 8 step puzzles\ntake short stick from rope, use stick to take out rocks in 2, 3, 4\nplace rocks in 5,6, 7 to get long stick\nuse long stick to take treat in 8","74acbf72e63806e6579ba0cb8fbb0d9d":"Wrote a book, Make Art with Python\nTeaches programming through creative programs and art\nIt's the book I wish existed when I started programming\nJust joined two weeks ago as the APM Evangelist at Datadog","e1e173e2d731e475c3e66b8472b07e36":"googlenet 2014\nimage comes in on the left, chop off the end of network, where softmax classifier is, and make it your own","b5ac74180b80a5ee4ce3006c71509135":"didn't actually use GPUs for training\npaper suggests could be trained w/ few high end gpus in around a week\n(great for build and test iteration)","82b116b955eab6a707cf2a581be36be2":"AlexNet\n2012 for ImageNet Challenge","17e724f062e9ef6349256e417cf0a052":"the hype has reached full effect","e963cfd7cc56bb905bf02967fd658eba":"neural networks are software 2.0\nto be fair, he also mentions that software 2.0 works in tandem with software 1.0, doesn't just go away\nandrej karpathy\nmight be biased\n","2cd61c8f5412ed41ca2ed7d577444703":"poor mans deep learning camera here, \ninference on the remote computer","d3e40ad53daaea711fae5f68548c5e89":"for some species, hearing the bird call is the only way to really identify\ndidn't know that when I got started, would be easy to bring in recorded audio too","cd733300b0e5cbaea530037ebeb202a8":"birds seem like an approachable problem\nnot trying to solve healthcare, not trying to build sentient ai\njust trying to look at birds\n","0ab916fa933be97a9828dcbd78f526b2":"NABirds dataset 400 species\nwildlabs, technology to conserve wildlife","d0e6466afc1914ce7614fdebe2506965":"datset of labeled digits\n0 - 9, this is what the input images look like\ngrayscale\nforward propagation make inference\nback propagation update weights\nrepeat ","4e25f61026f319c86a85217ff181d5b7":"originally wanted to build a robotic platform to detect crows specifically build games to explore their intelligence\nhowever, haven't detected any crows yet :("}}};
+
+
+			// Use local fonts
+			SLConfig.fonts_url = 'lib/fonts/';
+		</script>
+
+		<script src="lib/head.min.js"></script>
+		<script src="lib/reveal.min.js"></script>
+		<script src="lib/offline.js"></script>
+
+		<!-- Initialize the presentation -->
+		<script>
+			Reveal.initialize({
+				width: 960,
+				height: 700,
+				margin: 0.05,
+
+				controls: true,
+				progress: true,
+				history: true,
+				mouseWheel: false,
+				showNotes: false,
+				slideNumber: false,
+
+				autoSlide: 0 || 0,
+				autoSlideStoppable: true,
+
+				center: false,
+				shuffle: false,
+				loop: false,
+				rtl: false,
+
+				transition: "none",
+				backgroundTransition: "none",
+
+				dependencies: [
+					{ src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+
+		
+
+	</body>
+</html>

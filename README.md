@@ -1,8 +1,18 @@
 # Birding with Python and Machine Learning Slides
 
-This repo will contain all the slides for my 2018 Pycon talk, Birding with Python and Machine Learning.
+This repo contains all the slides for my 2018 Pycon talk, Birding with Python and Machine Learning.
 
-It will also contain links to the talk's video, along with any supplemental code and images.
+It contains a link to the talk's video, along with any supplemental code and images. 
+
+## Watch the Video
+
+[The video is here on YouTube](https://www.youtube.com/watch?v=938yg4udxSc).
+
+## Viewing the Slides
+
+The slides are all in the `slides/` directory. Simply open the `index.html` file in a web browser, and you should be able to navigate through them all. 
+
+Note they go both down and to the right.
 
 ## Supplemental Code
 
